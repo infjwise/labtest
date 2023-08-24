@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random ZIP File Downloader</title>
+</head>
+<body>
+    <h1>Random ZIP File Downloader</h1>
+    <button id="downloadButton">Download Random ZIP</button>
+
+    <script>
+        document.getElementById("downloadButton").addEventListener("click", function() {
+            // List of ZIP files
+            var zipFiles = [
+                "file1.zip",
+                "file2.zip",
+                "file3.zip"
+                // Add more file names as needed
+            ];
+
+            // Select a random ZIP file from the list
+            var randomIndex = Math.floor(Math.random() * zipFiles.length);
+            var randomZipFile = zipFiles[randomIndex];
+
+            // Construct the download link
+            var downloadLink = document.createElement("a");
+            downloadLink.href = randomZipFile;
+            downloadLink.download = randomZipFile;
+            downloadLink.click();
+        });
+    </script>
+</body>
+</html>
